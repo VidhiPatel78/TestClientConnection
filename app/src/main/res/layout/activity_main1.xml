@@ -1,0 +1,2158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/header"
+                layout="@layout/header_add_quotes"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_alignParentTop="true" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/header">
+
+                <RelativeLayout
+                    android:id="@+id/complete_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:gravity="center">
+
+                        <jp.co.cyberagent.android.gpuimage.GPUImageView
+                            android:id="@+id/gpuimage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <RelativeLayout
+                                    android:id="@+id/alledit_ll"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:orientation="vertical"
+                                    android:visibility="gone">
+
+                                    <RelativeLayout
+                                        android:id="@+id/top_option"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_above="@+id/main"
+                                        android:layout_marginTop="5dp"
+                                        android:gravity="center"
+                                        android:orientation="vertical"
+                                        android:visibility="invisible">
+
+                                        <LinearLayout
+                                            android:id="@+id/tab_layout_format"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal"
+                                            android:weightSum="2">
+
+                                            <RelativeLayout
+                                                android:id="@+id/tabformattxt"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:background="@color/white"
+                                                android:onClick="onClick">
+
+                                                <com.text.with.sticker.textonphoto.utility.CustomTextView
+                                                    android:id="@+id/txt_format"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_centerInParent="true"
+                                                    android:text="@string/txt"
+                                                    app:assetFontTextName="Text"
+                                                    app:customColor="@color/black" />
+
+                                                <ImageView
+                                                    android:id="@+id/img_format_txt"
+                                                    android:layout_width="20dp"
+                                                    android:layout_height="20dp"
+                                                    android:layout_centerInParent="true"
+                                                    android:layout_marginLeft="10dp"
+                                                    android:layout_toRightOf="@+id/txt_format"
+                                                    android:background="@drawable/square_white" />
+                                            </RelativeLayout>
+
+                                            <RelativeLayout
+                                                android:id="@+id/tabformatpunch"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/gradient"
+                                                android:onClick="onClick">
+
+                                                <com.text.with.sticker.textonphoto.utility.CustomTextView
+                                                    android:id="@+id/punch_format"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_centerInParent="true"
+                                                    android:text="@string/punch"
+                                                    app:assetFontTextName="Text"
+                                                    app:customColor="@color/white" />
+
+                                                <ImageView
+                                                    android:id="@+id/img_format_punch"
+                                                    android:layout_width="20dp"
+                                                    android:layout_height="20dp"
+                                                    android:layout_centerInParent="true"
+                                                    android:layout_marginLeft="10dp"
+                                                    android:layout_toRightOf="@+id/punch_format"
+                                                    android:background="@drawable/square_white" />
+                                            </RelativeLayout>
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:id="@+id/format_alltype"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/tab_layout_format"
+                                            android:background="@color/white"
+                                            android:orientation="horizontal"
+                                            android:weightSum="7">
+
+                                            <RelativeLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1">
+
+                                                <Button
+                                                    android:id="@+id/g1"
+                                                    android:layout_width="40dp"
+                                                    android:layout_height="40dp"
+                                                    android:layout_centerInParent="true"
+                                                    android:layout_margin="3dp"
+                                                    android:background="@drawable/left_align_text" />
+                                            </RelativeLayout>
+
+                                            <RelativeLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1">
+
+                                                <Button
+                                                    android:id="@+id/g2"
+                                                    android:layout_width="40dp"
+                                                    android:layout_height="40dp"
+                                                    android:layout_centerInParent="true"
+                                                    android:layout_margin="3dp"
+                                                    android:background="@drawable/center_align_text" />
+                                            </RelativeLayout>
+
+                                            <RelativeLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1">
+
+                                                <Button
+                                                    android:id="@+id/g3"
+                                                    android:layout_width="40dp"
+                                                    android:layout_height="40dp"
+                                                    android:layout_centerInParent="true"
+                                                    android:layout_margin="3dp"
+                                                    android:background="@drawable/right_align_text" />
+                                            </RelativeLayout>
+
+                                            <RelativeLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1">
+
+                                                <Button
+                                                    android:id="@+id/bold"
+                                                    android:layout_width="40dp"
+                                                    android:layout_height="40dp"
+                                                    android:layout_centerInParent="true"
+                                                    android:layout_margin="3dp"
+                                                    android:background="@drawable/bold" />
+                                            </RelativeLayout>
+
+                                            <RelativeLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1">
+
+                                                <Button
+                                                    android:id="@+id/italic"
+                                                    android:layout_width="40dp"
+                                                    android:layout_height="40dp"
+                                                    android:layout_centerInParent="true"
+                                                    android:layout_margin="3dp"
+                                                    android:background="@drawable/italic" />
+                                            </RelativeLayout>
+
+                                            <RelativeLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1">
+
+                                                <Button
+                                                    android:id="@+id/underline"
+                                                    android:layout_width="40dp"
+                                                    android:layout_height="40dp"
+                                                    android:layout_centerInParent="true"
+                                                    android:layout_margin="3dp"
+                                                    android:background="@drawable/underline" />
+                                            </RelativeLayout>
+
+                                            <RelativeLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1">
+
+                                                <Button
+                                                    android:id="@+id/strike"
+                                                    android:layout_width="40dp"
+                                                    android:layout_height="40dp"
+                                                    android:layout_centerInParent="true"
+                                                    android:layout_margin="3dp"
+                                                    android:background="@drawable/text" />
+                                            </RelativeLayout>
+                                        </LinearLayout>
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:id="@+id/font_rel"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_above="@+id/main"
+                                        android:visibility="invisible">
+
+                                        <LinearLayout
+                                            android:id="@+id/tab_layout_font"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal"
+                                            android:weightSum="2">
+
+                                            <RelativeLayout
+                                                android:id="@+id/tabfonttxt"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:background="@color/white"
+                                                android:onClick="onClick">
+
+                                                <com.text.with.sticker.textonphoto.utility.CustomTextView
+                                                    android:id="@+id/txt_font"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_centerInParent="true"
+                                                    android:text="@string/txt"
+                                                    app:assetFontTextName="Text"
+                                                    app:customColor="@color/black" />
+
+                                                <ImageView
+                                                    android:id="@+id/img_font_txt"
+                                                    android:layout_width="20dp"
+                                                    android:layout_height="20dp"
+                                                    android:layout_centerInParent="true"
+                                                    android:layout_marginLeft="10dp"
+                                                    android:layout_toRightOf="@+id/txt_font"
+                                                    android:background="@drawable/square_white" />
+                                            </RelativeLayout>
+
+                                            <RelativeLayout
+                                                android:id="@+id/tabfontpunch"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/gradient"
+                                                android:onClick="onClick">
+
+                                                <com.text.with.sticker.textonphoto.utility.CustomTextView
+                                                    android:id="@+id/punch_font"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_centerInParent="true"
+                                                    android:text="@string/punch"
+                                                    app:assetFontTextName="Text"
+                                                    app:customColor="@color/white" />
+
+                                                <ImageView
+                                                    android:id="@+id/img_font_punch"
+                                                    android:layout_width="20dp"
+                                                    android:layout_height="20dp"
+                                                    android:layout_centerInParent="true"
+                                                    android:layout_marginLeft="10dp"
+                                                    android:layout_toRightOf="@+id/punch_font"
+                                                    android:background="@drawable/square_white" />
+                                            </RelativeLayout>
+                                        </LinearLayout>
+
+                                        <HorizontalScrollView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/tab_layout_font"
+                                            android:layout_centerVertical="true"
+                                            android:background="@color/white"
+                                            android:scrollbars="vertical">
+
+                                            <LinearLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:background="@color/white"
+                                                android:orientation="horizontal">
+
+                                                <RelativeLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="2dp">
+
+                                                    <Button
+                                                        android:id="@+id/fnt"
+                                                        android:layout_width="?attr/actionBarSize"
+                                                        android:layout_height="?attr/actionBarSize"
+                                                        android:layout_centerHorizontal="true"
+                                                        android:layout_centerVertical="true"
+                                                        android:background="@drawable/clear"
+                                                        android:gravity="center"
+                                                        android:onClick="onClick" />
+                                                </RelativeLayout>
+
+                                                <RelativeLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="2dp">
+
+                                                    <Button
+                                                        android:id="@+id/fnt1"
+                                                        android:layout_width="?attr/actionBarSize"
+                                                        android:layout_height="?attr/actionBarSize"
+                                                        android:layout_centerHorizontal="true"
+                                                        android:layout_centerVertical="true"
+                                                        android:onClick="onClick"
+                                                        android:text="Ab"
+                                                        android:textAllCaps="false"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="20sp" />
+                                                </RelativeLayout>
+
+                                                <RelativeLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="2dp">
+
+                                                    <Button
+                                                        android:id="@+id/fnt2"
+                                                        android:layout_width="?attr/actionBarSize"
+                                                        android:layout_height="?attr/actionBarSize"
+                                                        android:layout_centerHorizontal="true"
+                                                        android:layout_centerVertical="true"
+                                                        android:onClick="onClick"
+                                                        android:text="Ac"
+                                                        android:textAllCaps="false"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="20sp" />
+                                                </RelativeLayout>
+
+                                                <RelativeLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="2dp">
+
+                                                    <Button
+                                                        android:id="@+id/fnt3"
+                                                        android:layout_width="?attr/actionBarSize"
+                                                        android:layout_height="?attr/actionBarSize"
+                                                        android:layout_centerHorizontal="true"
+                                                        android:layout_centerVertical="true"
+                                                        android:onClick="onClick"
+                                                        android:text="Ad"
+                                                        android:textAllCaps="false"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="20sp" />
+                                                </RelativeLayout>
+
+                                                <RelativeLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="2dp">
+
+                                                    <Button
+                                                        android:id="@+id/fnt4"
+                                                        android:layout_width="?attr/actionBarSize"
+                                                        android:layout_height="?attr/actionBarSize"
+                                                        android:layout_centerHorizontal="true"
+                                                        android:layout_centerVertical="true"
+                                                        android:onClick="onClick"
+                                                        android:text="Ae"
+                                                        android:textAllCaps="false"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="20sp" />
+                                                </RelativeLayout>
+
+                                                <RelativeLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="2dp">
+
+                                                    <Button
+                                                        android:id="@+id/fnt5"
+                                                        android:layout_width="?attr/actionBarSize"
+                                                        android:layout_height="?attr/actionBarSize"
+                                                        android:layout_centerHorizontal="true"
+                                                        android:layout_centerVertical="true"
+                                                        android:onClick="onClick"
+                                                        android:text="Af"
+                                                        android:textAllCaps="false"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="20sp" />
+                                                </RelativeLayout>
+
+                                                <RelativeLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="2dp">
+
+                                                    <Button
+                                                        android:id="@+id/fnt7"
+                                                        android:layout_width="?attr/actionBarSize"
+                                                        android:layout_height="?attr/actionBarSize"
+                                                        android:layout_centerHorizontal="true"
+                                                        android:layout_centerVertical="true"
+                                                        android:onClick="onClick"
+                                                        android:text="Ag"
+                                                        android:textAllCaps="false"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="20sp" />
+                                                </RelativeLayout>
+
+                                                <RelativeLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="2dp">
+
+                                                    <Button
+                                                        android:id="@+id/fnt8"
+                                                        android:layout_width="?attr/actionBarSize"
+                                                        android:layout_height="?attr/actionBarSize"
+                                                        android:layout_centerHorizontal="true"
+                                                        android:layout_centerVertical="true"
+                                                        android:onClick="onClick"
+                                                        android:text="Ah"
+                                                        android:textAllCaps="false"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="20sp" />
+                                                </RelativeLayout>
+
+                                                <RelativeLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="2dp">
+
+                                                    <Button
+                                                        android:id="@+id/fnt9"
+                                                        android:layout_width="?attr/actionBarSize"
+                                                        android:layout_height="?attr/actionBarSize"
+                                                        android:layout_centerHorizontal="true"
+                                                        android:layout_centerVertical="true"
+                                                        android:onClick="onClick"
+                                                        android:text="Ai"
+                                                        android:textAllCaps="false"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="20sp" />
+                                                </RelativeLayout>
+
+                                                <RelativeLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="2dp">
+
+                                                    <Button
+                                                        android:id="@+id/fnt10"
+                                                        android:layout_width="?attr/actionBarSize"
+                                                        android:layout_height="?attr/actionBarSize"
+                                                        android:layout_centerHorizontal="true"
+                                                        android:layout_centerVertical="true"
+                                                        android:onClick="onClick"
+                                                        android:text="Aj"
+                                                        android:textAllCaps="false"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="20sp" />
+                                                </RelativeLayout>
+
+                                                <RelativeLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="2dp">
+
+                                                    <Button
+                                                        android:id="@+id/fnt6"
+                                                        android:layout_width="?attr/actionBarSize"
+                                                        android:layout_height="?attr/actionBarSize"
+                                                        android:layout_centerHorizontal="true"
+                                                        android:layout_centerVertical="true"
+                                                        android:onClick="onClick"
+                                                        android:text="Ak"
+                                                        android:textAllCaps="false"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="20sp" />
+                                                </RelativeLayout>
+
+                                                <RelativeLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="2dp">
+
+                                                    <Button
+                                                        android:id="@+id/fnt11"
+                                                        android:layout_width="?attr/actionBarSize"
+                                                        android:layout_height="?attr/actionBarSize"
+                                                        android:layout_centerHorizontal="true"
+                                                        android:layout_centerVertical="true"
+                                                        android:onClick="onClick"
+                                                        android:text="Al"
+                                                        android:textAllCaps="false"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="20sp" />
+                                                </RelativeLayout>
+
+                                                <RelativeLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="2dp">
+
+                                                    <Button
+                                                        android:id="@+id/fnt12"
+                                                        android:layout_width="?attr/actionBarSize"
+                                                        android:layout_height="?attr/actionBarSize"
+                                                        android:layout_centerHorizontal="true"
+                                                        android:layout_centerVertical="true"
+                                                        android:onClick="onClick"
+                                                        android:text="Am"
+                                                        android:textAllCaps="false"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="20sp" />
+                                                </RelativeLayout>
+
+                                                <RelativeLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="2dp">
+
+                                                    <Button
+                                                        android:id="@+id/fnt13"
+                                                        android:layout_width="?attr/actionBarSize"
+                                                        android:layout_height="?attr/actionBarSize"
+                                                        android:layout_centerHorizontal="true"
+                                                        android:layout_centerVertical="true"
+                                                        android:onClick="onClick"
+                                                        android:text="An"
+                                                        android:textAllCaps="false"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="20sp" />
+                                                </RelativeLayout>
+
+                                                <RelativeLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="2dp">
+
+                                                    <Button
+                                                        android:id="@+id/fnt14"
+                                                        android:layout_width="?attr/actionBarSize"
+                                                        android:layout_height="?attr/actionBarSize"
+                                                        android:layout_centerHorizontal="true"
+                                                        android:layout_centerVertical="true"
+                                                        android:onClick="onClick"
+                                                        android:text="Ao"
+                                                        android:textAllCaps="false"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="20sp" />
+                                                </RelativeLayout>
+
+                                                <RelativeLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="2dp">
+
+                                                    <Button
+                                                        android:id="@+id/fnt15"
+                                                        android:layout_width="?attr/actionBarSize"
+                                                        android:layout_height="?attr/actionBarSize"
+                                                        android:layout_centerHorizontal="true"
+                                                        android:layout_centerVertical="true"
+                                                        android:onClick="onClick"
+                                                        android:text="Ap"
+                                                        android:textAllCaps="false"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="20sp" />
+                                                </RelativeLayout>
+
+                                                <RelativeLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="2dp">
+
+                                                    <Button
+                                                        android:id="@+id/fnt16"
+                                                        android:layout_width="?attr/actionBarSize"
+                                                        android:layout_height="?attr/actionBarSize"
+                                                        android:layout_centerHorizontal="true"
+                                                        android:layout_centerVertical="true"
+                                                        android:onClick="onClick"
+                                                        android:text="Aq"
+                                                        android:textAllCaps="false"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="20sp" />
+                                                </RelativeLayout>
+
+                                                <RelativeLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="2dp">
+
+                                                    <Button
+                                                        android:id="@+id/fnt17"
+                                                        android:layout_width="?attr/actionBarSize"
+                                                        android:layout_height="?attr/actionBarSize"
+                                                        android:layout_centerHorizontal="true"
+                                                        android:layout_centerVertical="true"
+                                                        android:onClick="onClick"
+                                                        android:text="Ar"
+                                                        android:textAllCaps="false"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="20sp" />
+                                                </RelativeLayout>
+
+                                                <RelativeLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="2dp">
+
+                                                    <Button
+                                                        android:id="@+id/fnt18"
+                                                        android:layout_width="?attr/actionBarSize"
+                                                        android:layout_height="?attr/actionBarSize"
+                                                        android:layout_centerHorizontal="true"
+                                                        android:layout_centerVertical="true"
+                                                        android:onClick="onClick"
+                                                        android:text="As"
+                                                        android:textAllCaps="false"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="20sp" />
+                                                </RelativeLayout>
+
+                                                <RelativeLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="2dp">
+
+                                                    <Button
+                                                        android:id="@+id/fnt19"
+                                                        android:layout_width="?attr/actionBarSize"
+                                                        android:layout_height="?attr/actionBarSize"
+                                                        android:layout_centerHorizontal="true"
+                                                        android:layout_centerVertical="true"
+                                                        android:onClick="onClick"
+                                                        android:text="At"
+                                                        android:textAllCaps="false"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="20sp" />
+                                                </RelativeLayout>
+
+                                                <RelativeLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="2dp">
+
+                                                    <Button
+                                                        android:id="@+id/fnt20"
+                                                        android:layout_width="?attr/actionBarSize"
+                                                        android:layout_height="?attr/actionBarSize"
+                                                        android:layout_centerHorizontal="true"
+                                                        android:layout_centerVertical="true"
+                                                        android:onClick="onClick"
+                                                        android:text="Au"
+                                                        android:textAllCaps="false"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="20sp" />
+                                                </RelativeLayout>
+
+                                                <RelativeLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="2dp">
+
+                                                    <Button
+                                                        android:id="@+id/fnt21"
+                                                        android:layout_width="?attr/actionBarSize"
+                                                        android:layout_height="?attr/actionBarSize"
+                                                        android:layout_centerHorizontal="true"
+                                                        android:layout_centerVertical="true"
+                                                        android:onClick="onClick"
+                                                        android:text="Av"
+                                                        android:textAllCaps="false"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="20sp" />
+                                                </RelativeLayout>
+
+                                                <RelativeLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="2dp">
+
+                                                    <Button
+                                                        android:id="@+id/fnt22"
+                                                        android:layout_width="?attr/actionBarSize"
+                                                        android:layout_height="?attr/actionBarSize"
+                                                        android:layout_centerHorizontal="true"
+                                                        android:layout_centerVertical="true"
+                                                        android:onClick="onClick"
+                                                        android:text="Aw"
+                                                        android:textAllCaps="false"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="20sp" />
+                                                </RelativeLayout>
+
+                                                <RelativeLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="2dp">
+
+                                                    <Button
+                                                        android:id="@+id/fnt23"
+                                                        android:layout_width="?attr/actionBarSize"
+                                                        android:layout_height="?attr/actionBarSize"
+                                                        android:layout_centerHorizontal="true"
+                                                        android:layout_centerVertical="true"
+                                                        android:onClick="onClick"
+                                                        android:text="Ax"
+                                                        android:textAllCaps="false"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="20sp" />
+                                                </RelativeLayout>
+
+                                                <RelativeLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="2dp">
+
+                                                    <Button
+                                                        android:id="@+id/fnt24"
+                                                        android:layout_width="?attr/actionBarSize"
+                                                        android:layout_height="?attr/actionBarSize"
+                                                        android:layout_centerHorizontal="true"
+                                                        android:layout_centerVertical="true"
+                                                        android:onClick="onClick"
+                                                        android:text="Ay"
+                                                        android:textAllCaps="false"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="20sp" />
+                                                </RelativeLayout>
+
+                                                <RelativeLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="2dp">
+
+                                                    <Button
+                                                        android:id="@+id/fnt25"
+                                                        android:layout_width="?attr/actionBarSize"
+                                                        android:layout_height="?attr/actionBarSize"
+                                                        android:layout_centerHorizontal="true"
+                                                        android:layout_centerVertical="true"
+                                                        android:onClick="onClick"
+                                                        android:text="Az"
+                                                        android:textAllCaps="false"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="20sp" />
+                                                </RelativeLayout>
+
+                                                <RelativeLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="2dp">
+
+                                                    <Button
+                                                        android:id="@+id/fnt26"
+                                                        android:layout_width="?attr/actionBarSize"
+                                                        android:layout_height="?attr/actionBarSize"
+                                                        android:layout_centerHorizontal="true"
+                                                        android:layout_centerVertical="true"
+                                                        android:onClick="onClick"
+                                                        android:text="Ba"
+                                                        android:textAllCaps="false"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="20sp" />
+                                                </RelativeLayout>
+
+                                                <RelativeLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="2dp">
+
+                                                    <Button
+                                                        android:id="@+id/fnt27"
+                                                        android:layout_width="?attr/actionBarSize"
+                                                        android:layout_height="?attr/actionBarSize"
+                                                        android:layout_centerHorizontal="true"
+                                                        android:layout_centerVertical="true"
+                                                        android:onClick="onClick"
+                                                        android:text="Bc"
+                                                        android:textAllCaps="false"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="20sp" />
+                                                </RelativeLayout>
+
+                                                <RelativeLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="2dp">
+
+                                                    <Button
+                                                        android:id="@+id/fnt28"
+                                                        android:layout_width="?attr/actionBarSize"
+                                                        android:layout_height="?attr/actionBarSize"
+                                                        android:layout_centerHorizontal="true"
+                                                        android:layout_centerVertical="true"
+                                                        android:onClick="onClick"
+                                                        android:text="Bd"
+                                                        android:textAllCaps="false"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="20sp" />
+                                                </RelativeLayout>
+
+                                                <RelativeLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="2dp">
+
+                                                    <Button
+                                                        android:id="@+id/fnt29"
+                                                        android:layout_width="?attr/actionBarSize"
+                                                        android:layout_height="?attr/actionBarSize"
+                                                        android:layout_centerHorizontal="true"
+                                                        android:layout_centerVertical="true"
+                                                        android:onClick="onClick"
+                                                        android:text="Be"
+                                                        android:textAllCaps="false"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="20sp" />
+                                                </RelativeLayout>
+                                            </LinearLayout>
+                                        </HorizontalScrollView>
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:id="@+id/color_rel"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_above="@+id/main"
+                                        android:visibility="invisible">
+
+                                        <LinearLayout
+                                            android:id="@+id/tab_layout_clr"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal"
+                                            android:weightSum="2">
+
+                                            <RelativeLayout
+                                                android:id="@+id/tabtxtrel"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:background="@color/white"
+                                                android:onClick="onClick">
+
+                                                <com.text.with.sticker.textonphoto.utility.CustomTextView
+                                                    android:id="@+id/txt_clr"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_centerInParent="true"
+                                                    android:text="@string/txt"
+                                                    app:assetFontTextName="Text"
+                                                    app:customColor="@color/black" />
+
+                                                <ImageView
+                                                    android:id="@+id/img_color_txt"
+                                                    android:layout_width="20dp"
+                                                    android:layout_height="20dp"
+                                                    android:layout_centerInParent="true"
+                                                    android:layout_marginLeft="10dp"
+                                                    android:layout_toRightOf="@+id/txt_clr"
+                                                    android:background="@drawable/square_white" />
+                                            </RelativeLayout>
+
+                                            <RelativeLayout
+                                                android:id="@+id/tabpunchrel"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/gradient"
+                                                android:onClick="onClick">
+
+                                                <com.text.with.sticker.textonphoto.utility.CustomTextView
+                                                    android:id="@+id/txt_punch"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_centerInParent="true"
+                                                    android:text="@string/punch"
+                                                    app:assetFontTextName="Text"
+                                                    app:customColor="@color/white" />
+
+                                                <ImageView
+                                                    android:id="@+id/img_color_punch"
+                                                    android:layout_width="20dp"
+                                                    android:layout_height="20dp"
+                                                    android:layout_centerInParent="true"
+                                                    android:layout_marginLeft="10dp"
+                                                    android:layout_toRightOf="@+id/txt_punch"
+                                                    android:background="@drawable/square_white" />
+                                            </RelativeLayout>
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/tab_layout_clr"
+                                            android:background="@color/white"
+                                            android:orientation="horizontal">
+
+                                            <RelativeLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:gravity="center">
+
+                                                <Button
+                                                    android:id="@+id/dropcolor_picker"
+                                                    android:layout_width="40dp"
+                                                    android:layout_height="40dp"
+                                                    android:layout_margin="3dp"
+                                                    android:background="@drawable/dropcolor_picker"
+                                                    android:onClick="onClick" />
+                                            </RelativeLayout>
+
+                                            <RelativeLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:gravity="center">
+
+                                                <Button
+                                                    android:id="@+id/colorpicker"
+                                                    android:layout_width="40dp"
+                                                    android:layout_height="40dp"
+                                                    android:layout_margin="3dp"
+                                                    android:background="@drawable/colorwheel"
+                                                    android:onClick="onClick" />
+                                            </RelativeLayout>
+
+                                            <HorizontalScrollView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_centerVertical="true"
+                                                android:scrollbars="vertical">
+
+                                                <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="horizontal">
+
+                                                    <RelativeLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_weight="1"
+                                                        android:gravity="center">
+
+                                                        <Button
+                                                            android:id="@+id/c5"
+                                                            android:layout_width="40dp"
+                                                            android:layout_height="40dp"
+                                                            android:layout_margin="3dp"
+                                                            android:background="@drawable/color5"
+                                                            android:onClick="onClick" />
+                                                    </RelativeLayout>
+
+                                                    <RelativeLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_weight="1"
+                                                        android:gravity="center">
+
+                                                        <Button
+                                                            android:id="@+id/c6"
+                                                            android:layout_width="40dp"
+                                                            android:layout_height="40dp"
+                                                            android:layout_margin="3dp"
+                                                            android:background="@drawable/color6"
+                                                            android:onClick="onClick" />
+                                                    </RelativeLayout>
+
+                                                    <RelativeLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_weight="1"
+                                                        android:gravity="center">
+
+                                                        <Button
+                                                            android:id="@+id/c1"
+                                                            android:layout_width="40dp"
+                                                            android:layout_height="40dp"
+                                                            android:layout_margin="3dp"
+                                                            android:background="@drawable/color_red"
+                                                            android:onClick="onClick" />
+                                                    </RelativeLayout>
+
+                                                    <RelativeLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_weight="1"
+                                                        android:gravity="center">
+
+                                                        <Button
+                                                            android:id="@+id/c2"
+                                                            android:layout_width="40dp"
+                                                            android:layout_height="40dp"
+                                                            android:layout_margin="3dp"
+                                                            android:background="@drawable/color2"
+                                                            android:onClick="onClick" />
+                                                    </RelativeLayout>
+
+                                                    <RelativeLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_weight="1"
+                                                        android:gravity="center">
+
+                                                        <Button
+                                                            android:id="@+id/c3"
+                                                            android:layout_width="40dp"
+                                                            android:layout_height="40dp"
+                                                            android:layout_margin="3dp"
+                                                            android:background="@drawable/color3"
+                                                            android:onClick="onClick" />
+                                                    </RelativeLayout>
+
+                                                    <RelativeLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_weight="1"
+                                                        android:gravity="center">
+
+                                                        <Button
+                                                            android:id="@+id/c4"
+                                                            android:layout_width="40dp"
+                                                            android:layout_height="40dp"
+                                                            android:layout_margin="3dp"
+                                                            android:background="@drawable/color4"
+                                                            android:onClick="onClick" />
+                                                    </RelativeLayout>
+
+                                                    <RelativeLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_weight="1"
+                                                        android:gravity="center">
+
+                                                        <Button
+                                                            android:id="@+id/c11"
+                                                            android:layout_width="40dp"
+                                                            android:layout_height="40dp"
+                                                            android:layout_margin="3dp"
+                                                            android:background="@drawable/color11"
+                                                            android:onClick="onClick" />
+                                                    </RelativeLayout>
+
+                                                    <RelativeLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_weight="1"
+                                                        android:gravity="center">
+
+                                                        <Button
+                                                            android:id="@+id/c12"
+                                                            android:layout_width="40dp"
+                                                            android:layout_height="40dp"
+                                                            android:layout_margin="3dp"
+                                                            android:background="@drawable/color12"
+                                                            android:onClick="onClick" />
+                                                    </RelativeLayout>
+
+                                                    <RelativeLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_weight="1"
+                                                        android:gravity="center">
+
+                                                        <Button
+                                                            android:id="@+id/c13"
+                                                            android:layout_width="40dp"
+                                                            android:layout_height="40dp"
+                                                            android:layout_margin="3dp"
+                                                            android:background="@drawable/color13"
+                                                            android:onClick="onClick" />
+                                                    </RelativeLayout>
+
+                                                    <RelativeLayout
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_weight="1"
+                                                        android:gravity="center">
+
+                                                        <Button
+                                                            android:id="@+id/c14"
+                                                            android:layout_width="40dp"
+                                                            android:layout_height="40dp"
+                                                            android:layout_margin="3dp"
+                                                            android:background="@drawable/color14"
+                                                            android:onClick="onClick" />
+                                                    </RelativeLayout>
+                                                </LinearLayout>
+                                            </HorizontalScrollView>
+                                        </LinearLayout>
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:id="@+id/shadow_rel"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_above="@+id/main"
+                                        android:gravity="center"
+                                        android:visibility="invisible">
+
+                                        <LinearLayout
+                                            android:id="@+id/tab_layout_shadow"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal"
+                                            android:weightSum="2">
+
+                                            <RelativeLayout
+                                                android:id="@+id/tabShadowtxt"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:background="@color/white"
+                                                android:onClick="onClick">
+
+                                                <com.text.with.sticker.textonphoto.utility.CustomTextView
+                                                    android:id="@+id/txt_shadow"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_centerInParent="true"
+                                                    android:text="@string/txt"
+                                                    app:assetFontTextName="Text"
+                                                    app:customColor="@color/black" />
+
+                                                <ImageView
+                                                    android:id="@+id/img_shadow_txt"
+                                                    android:layout_width="20dp"
+                                                    android:layout_height="20dp"
+                                                    android:layout_centerInParent="true"
+                                                    android:layout_marginLeft="10dp"
+                                                    android:layout_toRightOf="@+id/txt_shadow"
+                                                    android:background="@drawable/square_white" />
+                                            </RelativeLayout>
+
+                                            <RelativeLayout
+                                                android:id="@+id/tabshadowpunch"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/gradient"
+                                                android:onClick="onClick">
+
+                                                <com.text.with.sticker.textonphoto.utility.CustomTextView
+                                                    android:id="@+id/punch_shadow"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_centerInParent="true"
+                                                    android:text="@string/punch"
+                                                    app:assetFontTextName="Text"
+                                                    app:customColor="@color/white" />
+
+                                                <ImageView
+                                                    android:id="@+id/img_shadow_punch"
+                                                    android:layout_width="20dp"
+                                                    android:layout_height="20dp"
+                                                    android:layout_centerInParent="true"
+                                                    android:layout_marginLeft="10dp"
+                                                    android:layout_toRightOf="@+id/punch_shadow"
+                                                    android:background="@drawable/square_white" />
+                                            </RelativeLayout>
+                                        </LinearLayout>
+
+                                        <RelativeLayout
+                                            android:id="@+id/lay_shadowseek"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/tab_layout_shadow"
+                                            android:layout_centerInParent="true"
+                                            android:background="@color/white"
+                                            android:gravity="center">
+
+                                            <ImageView
+                                                android:id="@+id/shadow1"
+                                                android:layout_width="40dp"
+                                                android:layout_height="40dp"
+                                                android:layout_centerVertical="true"
+                                                android:layout_margin="2dp"
+                                                android:background="@drawable/text_shadow" />
+
+                                            <SeekBar
+                                                android:id="@+id/shadow_seekBar"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_centerHorizontal="true"
+                                                android:layout_centerVertical="true"
+                                                android:layout_toLeftOf="@+id/sd_color"
+                                                android:layout_toRightOf="@+id/shadow1"
+                                                android:max="12"
+                                                android:progress="1" />
+
+                                            <Button
+                                                android:id="@+id/sd_color"
+                                                android:layout_width="40dp"
+                                                android:layout_height="40dp"
+                                                android:layout_alignParentRight="true"
+                                                android:layout_centerVertical="true"
+                                                android:layout_margin="2dp"
+                                                android:background="@drawable/colorwheel" />
+                                        </RelativeLayout>
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:id="@+id/shader_rel"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_above="@+id/main"
+                                        android:gravity="center"
+                                        android:visibility="invisible">
+
+                                        <LinearLayout
+                                            android:id="@+id/tab_layout_shader"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal"
+                                            android:weightSum="2">
+
+                                            <RelativeLayout
+                                                android:id="@+id/tabshadertxt"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:background="@color/white"
+                                                android:onClick="onClick">
+
+                                                <com.text.with.sticker.textonphoto.utility.CustomTextView
+                                                    android:id="@+id/txt_shader"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_centerInParent="true"
+                                                    android:text="@string/txt"
+                                                    app:assetFontTextName="Text"
+                                                    app:customColor="@color/black" />
+
+                                                <ImageView
+                                                    android:id="@+id/img_shader_txt"
+                                                    android:layout_width="20dp"
+                                                    android:layout_height="20dp"
+                                                    android:layout_centerInParent="true"
+                                                    android:layout_marginLeft="10dp"
+                                                    android:layout_toRightOf="@+id/txt_shader"
+                                                    android:background="@drawable/square_white" />
+                                            </RelativeLayout>
+
+                                            <RelativeLayout
+                                                android:id="@+id/tabshaderpunch"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/gradient"
+                                                android:onClick="onClick">
+
+                                                <com.text.with.sticker.textonphoto.utility.CustomTextView
+                                                    android:id="@+id/punch_shader"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_centerInParent="true"
+                                                    android:text="@string/punch"
+                                                    app:assetFontTextName="Text"
+                                                    app:customColor="@color/white" />
+
+                                                <ImageView
+                                                    android:id="@+id/img_shader_punch"
+                                                    android:layout_width="20dp"
+                                                    android:layout_height="20dp"
+                                                    android:layout_centerInParent="true"
+                                                    android:layout_marginLeft="10dp"
+                                                    android:layout_toRightOf="@+id/punch_shader"
+                                                    android:background="@drawable/square_white" />
+                                            </RelativeLayout>
+                                        </LinearLayout>
+
+                                        <HorizontalScrollView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/tab_layout_shader"
+                                            android:layout_centerInParent="true"
+                                            android:background="@color/white"
+                                            android:scrollbars="vertical">
+
+                                            <LinearLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:background="@color/white"
+                                                android:gravity="center"
+                                                android:orientation="horizontal">
+
+                                                <Button
+                                                    android:id="@+id/sh"
+                                                    android:layout_width="40dp"
+                                                    android:layout_height="40dp"
+                                                    android:layout_margin="3dp"
+                                                    android:background="@drawable/clear" />
+
+                                                <Button
+                                                    android:id="@+id/sh1"
+                                                    android:layout_width="40dp"
+                                                    android:layout_height="40dp"
+                                                    android:layout_margin="3dp"
+                                                    android:background="@drawable/shs1" />
+
+                                                <Button
+                                                    android:id="@+id/sh2"
+                                                    android:layout_width="40dp"
+                                                    android:layout_height="40dp"
+                                                    android:layout_margin="3dp"
+                                                    android:background="@drawable/shs2" />
+
+                                                <Button
+                                                    android:id="@+id/sh3"
+                                                    android:layout_width="40dp"
+                                                    android:layout_height="40dp"
+                                                    android:layout_margin="3dp"
+                                                    android:background="@drawable/shs3" />
+
+                                                <Button
+                                                    android:id="@+id/sh4"
+                                                    android:layout_width="40dp"
+                                                    android:layout_height="40dp"
+                                                    android:layout_margin="3dp"
+                                                    android:background="@drawable/shs4" />
+
+                                                <Button
+                                                    android:id="@+id/sh5"
+                                                    android:layout_width="40dp"
+                                                    android:layout_height="40dp"
+                                                    android:layout_margin="3dp"
+                                                    android:background="@drawable/shs5" />
+
+                                                <Button
+                                                    android:id="@+id/sh6"
+                                                    android:layout_width="40dp"
+                                                    android:layout_height="40dp"
+                                                    android:layout_margin="3dp"
+                                                    android:background="@drawable/shs6" />
+
+                                                <Button
+                                                    android:id="@+id/sh7"
+                                                    android:layout_width="40dp"
+                                                    android:layout_height="40dp"
+                                                    android:layout_margin="3dp"
+                                                    android:background="@drawable/shs7" />
+
+                                                <Button
+                                                    android:id="@+id/sh8"
+                                                    android:layout_width="40dp"
+                                                    android:layout_height="40dp"
+                                                    android:layout_margin="3dp"
+                                                    android:background="@drawable/shs8" />
+
+                                                <Button
+                                                    android:id="@+id/sh9"
+                                                    android:layout_width="40dp"
+                                                    android:layout_height="40dp"
+                                                    android:layout_margin="3dp"
+                                                    android:background="@drawable/shs9" />
+
+                                                <Button
+                                                    android:id="@+id/sh10"
+                                                    android:layout_width="40dp"
+                                                    android:layout_height="40dp"
+                                                    android:layout_margin="3dp"
+                                                    android:background="@drawable/shs10" />
+                                            </LinearLayout>
+                                        </HorizontalScrollView>
+                                    </RelativeLayout>
+
+                                    <!--                    <RelativeLayout-->
+                                    <!--                        android:id="@+id/lay_viewStyle"-->
+                                    <!--                        android:layout_width="match_parent"-->
+                                    <!--                        android:layout_height="wrap_content"-->
+                                    <!--                        android:layout_above="@+id/main"-->
+                                    <!--                        android:background="@color/white"-->
+                                    <!--                        android:gravity="center"-->
+                                    <!--                        android:orientation="horizontal">-->
+
+                                    <!--                        <androidx.recyclerview.widget.RecyclerView-->
+                                    <!--                            android:id="@+id/styl_recycler"-->
+                                    <!--                            android:layout_width="match_parent"-->
+                                    <!--                            android:layout_height="wrap_content"-->
+                                    <!--                            android:orientation="horizontal"-->
+                                    <!--                            android:scrollbars="vertical" />-->
+                                    <!--                    </RelativeLayout>-->
+
+                                    <LinearLayout
+                                        android:id="@+id/main"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentBottom="true"
+                                        android:background="@color/black"
+                                        android:gravity="fill"
+                                        android:orientation="horizontal"
+                                        android:weightSum="6">
+
+
+                                        <RelativeLayout
+                                            android:id="@+id/la_size"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_weight="1"
+                                            android:gravity="center"
+                                            android:onClick="onClick">
+
+                                            <ImageView
+                                                android:id="@+id/size"
+                                                android:layout_width="40dp"
+                                                android:layout_height="40dp"
+                                                android:layout_centerHorizontal="true"
+                                                android:layout_margin="3dp"
+                                                android:background="@drawable/size" />
+
+                                            <com.text.with.sticker.textonphoto.utility.CustomTextView
+                                                android:id="@+id/for_txt"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_below="@+id/size"
+                                                android:layout_centerHorizontal="true"
+                                                android:layout_margin="3dp"
+                                                android:layout_weight="1"
+                                                android:gravity="center"
+                                                android:text="@string/format"
+                                                android:textSize="9sp"
+                                                app:assetFontTextName="Text"
+                                                app:customColor="@color/white" />
+                                        </RelativeLayout>
+
+                                        <RelativeLayout
+                                            android:id="@+id/la_fonts"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_weight="1"
+                                            android:gravity="center"
+                                            android:onClick="onClick">
+
+                                            <ImageView
+                                                android:id="@+id/fonts"
+                                                android:layout_width="40dp"
+                                                android:layout_height="40dp"
+                                                android:layout_centerHorizontal="true"
+                                                android:layout_margin="3dp"
+                                                android:background="@drawable/fonts" />
+
+                                            <com.text.with.sticker.textonphoto.utility.CustomTextView
+                                                android:id="@+id/font_txt"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_below="@+id/fonts"
+                                                android:layout_centerHorizontal="true"
+                                                android:layout_margin="3dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/Fonts"
+                                                android:textSize="9sp"
+                                                app:assetFontTextName="Text"
+                                                app:customColor="@color/white" />
+                                        </RelativeLayout>
+
+                                        <RelativeLayout
+                                            android:id="@+id/la_color"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_weight="1"
+                                            android:gravity="center"
+                                            android:onClick="onClick">
+
+                                            <ImageView
+                                                android:id="@+id/color"
+                                                android:layout_width="40dp"
+                                                android:layout_height="40dp"
+                                                android:layout_centerHorizontal="true"
+                                                android:layout_margin="3dp"
+                                                android:background="@drawable/color" />
+
+                                            <com.text.with.sticker.textonphoto.utility.CustomTextView
+                                                android:id="@+id/co_txt"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_below="@+id/color"
+                                                android:layout_centerHorizontal="true"
+                                                android:layout_gravity="center"
+                                                android:layout_margin="3dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/Color"
+                                                android:textSize="9sp"
+                                                app:assetFontTextName="Text"
+                                                app:customColor="@color/white" />
+                                        </RelativeLayout>
+
+                                        <RelativeLayout
+                                            android:id="@+id/la_shadow"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_weight="1"
+                                            android:gravity="center"
+                                            android:onClick="onClick">
+
+                                            <ImageView
+                                                android:id="@+id/shadow"
+                                                android:layout_width="40dp"
+                                                android:layout_height="40dp"
+                                                android:layout_centerHorizontal="true"
+                                                android:layout_margin="3dp"
+                                                android:background="@drawable/shadow" />
+
+                                            <com.text.with.sticker.textonphoto.utility.CustomTextView
+                                                android:id="@+id/shw_txt"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_below="@+id/shadow"
+                                                android:layout_centerHorizontal="true"
+                                                android:layout_gravity="center"
+                                                android:layout_margin="3dp"
+                                                android:layout_weight="1"
+                                                android:text="@string/shadow"
+                                                android:textSize="9sp"
+                                                app:assetFontTextName="Text"
+                                                app:customColor="@color/white" />
+                                        </RelativeLayout>
+
+                                        <RelativeLayout
+                                            android:id="@+id/la_shader"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_weight="1"
+                                            android:gravity="center"
+                                            android:onClick="onClick">
+
+                                            <ImageView
+                                                android:id="@+id/shader"
+                                                android:layout_width="40dp"
+                                                android:layout_height="40dp"
+                                                android:layout_centerHorizontal="true"
+                                                android:layout_margin="3dp"
+                                                android:background="@drawable/pattern" />
+
+                                            <com.text.with.sticker.textonphoto.utility.CustomTextView
+                                                android:id="@+id/shdr_txt"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_below="@+id/shader"
+                                                android:layout_centerHorizontal="true"
+                                                android:layout_margin="3dp"
+                                                android:layout_weight="1"
+                                                android:gravity="center"
+                                                android:text="@string/Shader"
+                                                android:textSize="9sp"
+                                                app:assetFontTextName="Text"
+                                                app:customColor="@color/white" />
+                                        </RelativeLayout>
+                                    </LinearLayout>
+                                </RelativeLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/scroll_of_all_backgrounds"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_above="@+id/menu_ll"
+                                    android:background="@color/colorPrimaryDark1"
+                                    android:orientation="horizontal"
+                                    android:visibility="gone">
+
+                                    <RelativeLayout
+                                        android:id="@+id/btn_Picker"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:onClick="onClickButtons">
+
+                                        <ImageView
+                                            android:id="@+id/img1"
+                                            android:layout_width="40dp"
+                                            android:layout_height="40dp"
+                                            android:layout_centerInParent="true"
+                                            android:layout_centerHorizontal="true"
+                                            android:src="@drawable/colorwheel" />
+
+                                        <com.text.with.sticker.textonphoto.utility.CustomTextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/img1"
+                                            android:layout_centerHorizontal="true"
+                                            android:gravity="center"
+                                            android:text="@string/Color"
+                                            android:textSize="12sp"
+                                            app:assetFontTextName="Text"
+                                            app:customColor="@color/white" />
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:id="@+id/btn_Cam"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:onClick="onClickButtons"
+                                        android:visibility="gone">
+
+                                        <ImageView
+                                            android:id="@+id/img2"
+                                            android:layout_width="40dp"
+                                            android:layout_height="40dp"
+                                            android:layout_centerInParent="true"
+                                            android:layout_centerHorizontal="true"
+                                            android:src="@drawable/camera1" />
+
+                                        <com.text.with.sticker.textonphoto.utility.CustomTextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/img2"
+                                            android:layout_centerHorizontal="true"
+                                            android:gravity="center"
+                                            android:text="@string/camera"
+                                            android:textSize="12sp"
+                                            app:assetFontTextName="Text"
+                                            app:customColor="@color/white" />
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:id="@+id/btn_Gallery"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:onClick="onClickButtons">
+
+                                        <ImageView
+                                            android:id="@+id/img3"
+                                            android:layout_width="40dp"
+                                            android:layout_height="40dp"
+                                            android:layout_centerInParent="true"
+                                            android:layout_centerHorizontal="true"
+                                            android:src="@drawable/gallery1" />
+
+                                        <com.text.with.sticker.textonphoto.utility.CustomTextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/img3"
+                                            android:layout_centerHorizontal="true"
+                                            android:gravity="center"
+                                            android:text="@string/gallery"
+                                            android:textSize="12sp"
+                                            app:assetFontTextName="Text"
+                                            app:customColor="@color/white" />
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:id="@+id/btn_Background"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:onClick="onClickButtons">
+
+                                        <ImageView
+                                            android:id="@+id/img4"
+                                            android:layout_width="40dp"
+                                            android:layout_height="40dp"
+                                            android:layout_centerInParent="true"
+                                            android:layout_centerHorizontal="true"
+                                            android:src="@drawable/background" />
+
+                                        <com.text.with.sticker.textonphoto.utility.CustomTextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/img4"
+                                            android:layout_centerHorizontal="true"
+                                            android:gravity="center"
+                                            android:text="@string/backgrond"
+                                            android:textSize="12sp"
+                                            app:assetFontTextName="Text"
+                                            app:customColor="@color/white" />
+                                    </RelativeLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/scroll_of_all_efct"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_above="@+id/menu_ll"
+                                    android:background="@color/white"
+                                    android:orientation="vertical"
+                                    android:visibility="gone">
+
+                                    <SeekBar
+                                        android:id="@+id/sb_effects"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:visibility="gone" />
+
+                                    <include
+                                        layout="@layout/scroll_of_all_effects"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="fill" />
+                                </LinearLayout>
+
+                                <Button
+                                    android:id="@+id/control_btn_stkr"
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:layout_above="@+id/controller_sticker"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginRight="5dp"
+                                    android:background="@drawable/slide_down" />
+
+                                <RelativeLayout
+                                    android:id="@+id/controller_sticker"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_above="@+id/menu_ll"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:id="@+id/tab_controlls_sticker"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:weightSum="2">
+
+                                        <RelativeLayout
+                                            android:id="@+id/controlls_stkr"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:background="@color/white"
+                                            android:onClick="onClick">
+
+                                            <com.text.with.sticker.textonphoto.utility.CustomTextView
+                                                android:id="@+id/controls_txt"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_centerInParent="true"
+                                                android:layout_margin="3dp"
+                                                android:text="@string/cntrls"
+                                                app:assetFontTextName="Text"
+                                                app:customColor="@color/black" />
+                                        </RelativeLayout>
+
+                                        <RelativeLayout
+                                            android:id="@+id/clr_opacity"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:background="@drawable/gradient"
+                                            android:onClick="onClick">
+
+                                            <com.text.with.sticker.textonphoto.utility.CustomTextView
+                                                android:id="@+id/clr_opacity_txt"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_centerInParent="true"
+                                                android:layout_margin="3dp"
+                                                android:text="@string/clr_opacity"
+                                                app:assetFontTextName="Text"
+                                                app:customColor="@color/white" />
+                                        </RelativeLayout>
+                                    </LinearLayout>
+
+                                    <RelativeLayout
+                                        android:id="@+id/controlls"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/tab_controlls_sticker"
+                                        android:background="@color/white"
+                                        android:orientation="vertical">
+
+                                        <RelativeLayout
+                                            android:id="@+id/up_lay"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center"
+                                            android:padding="5dp">
+
+                                            <ImageView
+                                                android:id="@+id/top"
+                                                android:layout_width="30dp"
+                                                android:layout_height="30dp"
+                                                android:layout_marginLeft="50dp"
+                                                android:src="@drawable/up_arrow" />
+                                        </RelativeLayout>
+
+                                        <RelativeLayout
+                                            android:id="@+id/center_lay"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/up_lay"
+                                            android:gravity="center">
+
+                                            <ImageView
+                                                android:id="@+id/left"
+                                                android:layout_width="30dp"
+                                                android:layout_height="30dp"
+                                                android:layout_marginLeft="17dp"
+                                                android:src="@drawable/left_arrow" />
+
+                                            <ImageView
+                                                android:id="@+id/right"
+                                                android:layout_width="30dp"
+                                                android:layout_height="30dp"
+                                                android:layout_marginLeft="40dp"
+                                                android:layout_toRightOf="@+id/left"
+                                                android:src="@drawable/right_arrow" />
+                                        </RelativeLayout>
+
+                                        <RelativeLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/up_lay"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_toRightOf="@+id/center_lay"
+                                            android:gravity="center">
+
+                                            <Button
+                                                android:id="@+id/duplicate"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_centerInParent="true"
+                                                android:background="@drawable/round_button"
+                                                android:padding="5dp"
+                                                android:text="@string/duplicate"
+                                                android:textColor="@color/white"
+                                                android:textSize="15sp" />
+                                        </RelativeLayout>
+
+                                        <RelativeLayout
+                                            android:id="@+id/down_lay"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/center_lay"
+                                            android:gravity="center">
+
+                                            <ImageView
+                                                android:id="@+id/down"
+                                                android:layout_width="30dp"
+                                                android:layout_height="30dp"
+                                                android:layout_marginLeft="50dp"
+                                                android:src="@drawable/down_arrow" />
+                                        </RelativeLayout>
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:id="@+id/clr_stkr"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/tab_controlls_sticker"
+                                        android:background="@color/colorPrimary"
+                                        android:gravity="center"
+                                        android:orientation="vertical">
+
+                                        <RelativeLayout
+                                            android:id="@+id/lay_trans"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp">
+
+                                            <ImageView
+                                                android:id="@+id/opacity1"
+                                                android:layout_width="30dp"
+                                                android:layout_height="30dp"
+                                                android:layout_centerVertical="true"
+                                                android:layout_margin="5dp"
+                                                android:background="@drawable/opacity" />
+
+                                            <SeekBar
+                                                android:id="@+id/trans_seekBar"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_centerVertical="true"
+                                                android:layout_marginRight="5dp"
+                                                android:layout_toRightOf="@+id/opacity1"
+                                                android:max="255"
+                                                android:progress="255" />
+                                        </RelativeLayout>
+
+                                        <RelativeLayout
+                                            android:id="@+id/lay_hue"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/lay_trans"
+                                            android:layout_marginTop="5dp">
+
+                                            <ImageView
+                                                android:id="@+id/hue_img"
+                                                android:layout_width="30dp"
+                                                android:layout_height="30dp"
+                                                android:layout_centerVertical="true"
+                                                android:layout_margin="5dp"
+                                                android:background="@drawable/ic_hue" />
+
+                                            <SeekBar
+                                                android:id="@+id/hue_seekBar"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_centerVertical="true"
+                                                android:layout_marginRight="5dp"
+                                                android:layout_toRightOf="@+id/hue_img"
+                                                android:max="100"
+                                                android:progress="1" />
+                                        </RelativeLayout>
+
+                                        <RelativeLayout
+                                            android:id="@+id/lay_colorfilter"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/lay_trans"
+                                            android:layout_marginTop="5dp">
+
+                                            <Button
+                                                android:id="@+id/dropcolor_picker1"
+                                                android:layout_width="40dp"
+                                                android:layout_height="40dp"
+                                                android:layout_alignParentLeft="true"
+                                                android:layout_centerInParent="true"
+                                                android:layout_margin="2dp"
+                                                android:layout_marginLeft="10dp"
+                                                android:background="@drawable/dropcolor_picker"
+                                                android:onClick="onClick" />
+
+                                            <Button
+                                                android:id="@+id/colorpicker1"
+                                                android:layout_width="40dp"
+                                                android:layout_height="40dp"
+                                                android:layout_centerVertical="true"
+                                                android:layout_marginLeft="10dp"
+                                                android:layout_marginTop="2dp"
+                                                android:layout_marginEnd="2dp"
+                                                android:layout_marginBottom="2dp"
+                                                android:layout_toRightOf="@+id/dropcolor_picker1"
+                                                android:background="@drawable/colorwheel"
+                                                android:onClick="onClick" />
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_centerInParent="true"
+                                                android:layout_centerVertical="true"
+                                                android:layout_marginLeft="10dp"
+                                                android:layout_marginRight="5dp"
+                                                android:layout_toRightOf="@+id/colorpicker1">
+
+                                                <com.text.with.sticker.textonphoto.colorpicker.LineColorPicker
+                                                    android:id="@+id/picker"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="40dp"
+                                                    android:orientation="horizontal" />
+                                            </LinearLayout>
+                                        </RelativeLayout>
+                                    </RelativeLayout>
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:id="@+id/scroll_all"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_above="@+id/menu_ll"
+                                    android:background="@drawable/gradient"
+                                    android:visibility="gone">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <ImageView
+                                            android:id="@+id/img_Camera"
+                                            android:layout_width="40dp"
+                                            android:layout_height="40dp"
+                                            android:layout_centerVertical="true"
+                                            android:layout_margin="2dp"
+                                            android:background="@drawable/camera1"
+                                            android:onClick="onClick"
+                                            android:visibility="gone" />
+
+                                        <ImageView
+                                            android:id="@+id/img_gallery"
+                                            android:layout_width="40dp"
+                                            android:layout_height="40dp"
+                                            android:layout_centerVertical="true"
+                                            android:layout_margin="2dp"
+                                            android:layout_toRightOf="@+id/img_Camera"
+                                            android:background="@drawable/gallery1"
+                                            android:onClick="onClick" />
+
+                                        <androidx.recyclerview.widget.RecyclerView
+                                            android:id="@+id/res_recyclerview_"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="fill"
+                                            android:layout_toRightOf="@+id/img_gallery"
+                                            android:orientation="horizontal"
+                                            android:scrollbars="vertical" />
+                                    </RelativeLayout>
+                                </RelativeLayout>
+
+
+                                <LinearLayout
+                                    android:id="@+id/menu_ll"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:background="@drawable/gradient"
+                                    android:orientation="vertical"
+                                    android:visibility="visible">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="fill">
+
+                                        <include
+                                            layout="@layout/footer_main_activity"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content" />
+                                    </RelativeLayout>
+                                </LinearLayout>
+                            </RelativeLayout>
+                        </jp.co.cyberagent.android.gpuimage.GPUImageView>
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/img_opacity"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@color/black"
+                        />
+
+                    <RelativeLayout
+                        android:id="@+id/fortext"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <RelativeLayout
+                            android:id="@+id/rl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:visibility="gone">
+
+                            <EditText
+                                android:id="@+id/text"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="25dp"
+                                android:cursorVisible="false"
+                                android:gravity="center"
+                                android:shadowColor="#000"
+                                android:shadowDx="3"
+                                android:shadowDy="3"
+                                android:shadowRadius="3"
+                                android:text="Ultimate Textgram text for demo"
+                                android:textColor="#fff"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/border" />
+
+                            <ImageView
+                                android:id="@+id/rotate"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="5dp"
+                                android:src="@drawable/rotate" />
+
+                            <ImageView
+                                android:id="@+id/delete"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_margin="5dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginRight="5dp"
+                                android:src="@drawable/remove"
+                                android:visibility="invisible" />
+
+                            <ImageView
+                                android:id="@+id/move"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_alignParentBottom="true"
+                                android:layout_margin="5dp"
+                                android:src="@drawable/move" />
+
+                            <com.text.with.sticker.textonphoto.utility.CustomTextView
+                                android:id="@+id/edit"
+                                android:layout_width="60dp"
+                                android:layout_height="30dp"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerInParent="true"
+                                android:layout_marginBottom="5dp"
+                                android:background="@drawable/compare_button"
+                                android:gravity="center"
+                                android:text="@string/txt_edit"
+                                android:textAllCaps="false"
+                                android:textSize="12sp"
+                                app:assetFontTextName="Text"
+                                app:customColor="@color/black" />
+
+                            <ImageView
+                                android:id="@+id/scale"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_margin="5dp"
+                                android:src="@drawable/scale" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

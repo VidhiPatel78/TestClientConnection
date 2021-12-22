@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/textShare" android:title="@string/txt_asTxt"/>
+    <item android:id="@+id/imageShare" android:title="@string/txt_asImg"/>
+</menu>
